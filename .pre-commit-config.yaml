@@ -1,0 +1,19 @@
+# Local checks before every commit. CI repeats the important ones; these
+# catch mistakes early. Install once per clone with: pre-commit install
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      # Refuse commits made directly on main; work goes through a branch and PR.
+      - id: no-commit-to-branch
+        args: ["--branch", "main"]
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-merge-conflict
+      - id: detect-private-key
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.0
+    hooks:
+      - id: gitleaks
