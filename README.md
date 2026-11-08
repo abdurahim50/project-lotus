@@ -1,8 +1,10 @@
 # Project Lotus: Zen Pharma DevSecOps Platform
 
-[![Terraform checks](https://github.com/abdurahim50/zen-infra/actions/workflows/terraform-checks.yml/badge.svg?branch=main)](https://github.com/abdurahim50/zen-infra/actions/workflows/terraform-checks.yml)
-![Sprint](https://img.shields.io/badge/sprint-3-blue)
-![Last commit](https://img.shields.io/github/last-commit/abdurahim50/zen-infra?label=zen-infra%20last%20commit)
+[![Status](https://img.shields.io/badge/status-in_development-orange)](#roadmap)
+[![Platform](https://img.shields.io/badge/platform-AWS_EKS-blue)](https://github.com/abdurahim50/zen-infra/blob/main/docs/adr/0004-eks-design.md)
+[![IaC](https://img.shields.io/badge/IaC-Terraform-844FBA)](https://github.com/abdurahim50/zen-infra)
+[![Infrastructure checks](https://github.com/abdurahim50/zen-infra/actions/workflows/terraform-checks.yml/badge.svg?branch=main)](https://github.com/abdurahim50/zen-infra/actions/workflows/terraform-checks.yml)
+[![Last commit](https://img.shields.io/github/last-commit/abdurahim50/zen-infra?label=last%20commit)](https://github.com/abdurahim50/zen-infra/commits/main)
 
 **Building a pharmaceutical platform on AWS with Terraform, EKS, and GitHub Actions, using OIDC authentication, approval gates, and documented security testing.**
 
