@@ -10,7 +10,7 @@
 
 Zen Pharmaceuticals is a fictional company. Project Lotus rebuilds its platform (eight backend services and a web UI) using documented DevSecOps practices: Scrum in Jira, architecture decision records, reviewed pull requests, and evidence attached to every ticket.
 
-> **Status (November 2026):** Sprint 3. Built and verified: Terraform state, CI identity, the approval-gated pipeline, the shared container registry and the EKS cluster. In progress: RDS and pod identity. Planned: application CI, GitOps and policy as code. The application repositories stay private until go-live.
+> **Status (November 2026):** Sprint 3. Built and verified: Terraform state, CI identity, the approval-gated pipeline, the shared container registry, the EKS cluster and RDS PostgreSQL. In progress: pod identity. Planned: application CI, GitOps and policy as code. The application repositories stay private until go-live.
 
 ---
 
@@ -37,7 +37,7 @@ flowchart LR
         ecr[(ECR<br/>immutable, KMS)]
         subgraph vpc[VPC: public / private / database tiers]
             eks[EKS<br/>private nodes]
-            rds[(RDS PostgreSQL<br/><i>in progress</i>)]
+            rds[(RDS PostgreSQL<br/>private, TLS, KMS)]
         end
         state[(Terraform state<br/>S3 + KMS)]
     end
@@ -47,19 +47,19 @@ flowchart LR
     build -.-> oidc
     apply --> state
     apply --> eks
-    apply -.-> rds
+    apply --> rds
     build -.-> ecr
     build -.->|update image digest| gitops
     gitops[zen-gitops + Argo CD<br/><i>planned</i>] -.-> eks
     ecr --> eks
-    eks -.-> rds
+    eks -->|TLS only| rds
 ```
 
 ## Repositories
 
 | Repository | Owns | Status | Visibility |
 |---|---|---|---|
-| [zen-infra](https://github.com/abdurahim50/zen-infra) | Terraform: state, CI identity, network, registry, EKS, RDS; the approval-gated pipeline | Foundation verified; RDS in progress | Public |
+| [zen-infra](https://github.com/abdurahim50/zen-infra) | Terraform: state, CI identity, network, registry, EKS, RDS; the approval-gated pipeline | Foundation, EKS and RDS verified | Public |
 | zen-gitops | Kubernetes manifests and policies, deployed by Argo CD | Planned | Private until go-live |
 | zen-pharma-backend | Eight services; CI to build, scan, sign and push images | Image push identity verified; CI planned | Private until go-live |
 | zen-pharma-frontend | Web UI; same CI pattern | Image push identity configured; CI planned | Private until go-live |
@@ -77,7 +77,9 @@ Each claim says exactly what was tested; the link goes to the published result.
 | Security scans fail closed | The scanner is installed from a pinned, hash-verified release; an empty hash stopped the job | [PR #13 verification](https://github.com/abdurahim50/zen-infra/pull/13#issuecomment-6723055786) |
 | Public Kubernetes API endpoint restricted to one approved /32; private endpoint enabled | A call from another network timed out; the approved address works | [PR #17 verification](https://github.com/abdurahim50/zen-infra/pull/17#issuecomment-6723056131) |
 | IMDS blocked for pods without host networking (IMDSv2, hop limit 1) | A test pod's request to the instance metadata service timed out | [PR #17 verification](https://github.com/abdurahim50/zen-infra/pull/17#issuecomment-6723056131) |
-| Data encrypted at rest with customer managed keys | KMS keys with rotation for Terraform state, images and Kubernetes secrets; cluster settings checked after deploy | [PR #17 verification](https://github.com/abdurahim50/zen-infra/pull/17#issuecomment-6723056131), [ADR-003](https://github.com/abdurahim50/zen-infra/blob/main/docs/adr/0003-shared-container-registry.md) |
+| No database password in Terraform | RDS generates and stores the master password in Secrets Manager; the whole state was searched and holds no password value | [PR #19 verification](https://github.com/abdurahim50/zen-infra/pull/19#issuecomment-6728771114) |
+| Database private and TLS only | Reachable only from the EKS cluster security group on 5432; a TLS connection from a pod worked, a non-TLS one was refused, and the endpoint was unreachable from outside the VPC | [PR #19 verification](https://github.com/abdurahim50/zen-infra/pull/19#issuecomment-6728771114) |
+| Data encrypted at rest with customer managed keys | KMS keys with rotation for Terraform state, images, Kubernetes secrets and the database; cluster settings checked after deploy | [PR #17 verification](https://github.com/abdurahim50/zen-infra/pull/17#issuecomment-6723056131), [PR #19 verification](https://github.com/abdurahim50/zen-infra/pull/19#issuecomment-6728771114), [ADR-003](https://github.com/abdurahim50/zen-infra/blob/main/docs/adr/0003-shared-container-registry.md) |
 
 Known limits are recorded, not hidden: development uses one AWS account and one engineer approves their own deployments (see the accepted-risks table in [ADR-002](https://github.com/abdurahim50/zen-infra/blob/main/docs/adr/0002-github-oidc.md)). Controls are mapped to NIST SP 800-53, with the DoD CIO Cloud Security Playbook as a gap check; a full control matrix is on the roadmap.
 
@@ -101,7 +103,7 @@ Known limits are recorded, not hidden: development uses one AWS account and one 
 
 ## Roadmap
 
-- **Now:** RDS PostgreSQL with no password in Terraform state; EKS Pod Identity for application pods.
+- **Now:** EKS Pod Identity for application pods, and IAM database login instead of passwords.
 - **Next:** application CI with SAST, dependency and container scanning, signed images with SBOMs; GitOps with Argo CD; policy as code so only signed images run.
 - **Then:** default-deny network policies, DAST, a decision on service-to-service mTLS, and automated security evidence for the control matrix.
 
