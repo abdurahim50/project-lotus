@@ -1,5 +1,9 @@
 # Project Lotus: Zen Pharma DevSecOps Platform
 
+[![Terraform checks](https://github.com/abdurahim50/zen-infra/actions/workflows/terraform-checks.yml/badge.svg?branch=main)](https://github.com/abdurahim50/zen-infra/actions/workflows/terraform-checks.yml)
+![Sprint](https://img.shields.io/badge/sprint-3-blue)
+![Last commit](https://img.shields.io/github/last-commit/abdurahim50/zen-infra?label=zen-infra%20last%20commit)
+
 **Building a pharmaceutical platform on AWS with Terraform, EKS, and GitHub Actions, using OIDC authentication, approval gates, and documented security testing.**
 
 Zen Pharmaceuticals is a fictional company. Project Lotus rebuilds its platform (eight backend services and a web UI) using documented DevSecOps practices: Scrum in Jira, architecture decision records, reviewed pull requests, and evidence attached to every ticket.
