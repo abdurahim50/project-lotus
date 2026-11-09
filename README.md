@@ -100,6 +100,7 @@ Known limits are recorded, not hidden: development uses one AWS account and one 
 | [002](https://github.com/abdurahim50/zen-infra/blob/main/docs/adr/0002-github-oidc.md) | GitHub OIDC for CI, with accepted risks |
 | [003](https://github.com/abdurahim50/zen-infra/blob/main/docs/adr/0003-shared-container-registry.md) | One shared container registry, build once and promote by digest |
 | [004](https://github.com/abdurahim50/zen-infra/blob/main/docs/adr/0004-eks-design.md) | EKS design for dev |
+| [005](https://github.com/abdurahim50/zen-infra/blob/main/docs/adr/0005-rds-design.md) | RDS PostgreSQL design for dev: RDS-managed password, IAM database authentication, TLS required |
 
 ## Roadmap
 
