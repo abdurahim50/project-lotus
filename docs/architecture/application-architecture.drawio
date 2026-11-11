@@ -1,0 +1,438 @@
+<mxfile host="Electron" compressed="false" agent="Architecture diagram generator">
+  <diagram id="zen-application-v1" name="Application architecture">
+    <mxGraphModel dx="2356" dy="1444" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2320" pageHeight="2050" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title-accent" parent="1" style="rounded=0;arcSize=0;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#087B81;strokeColor=#087B81;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="85" width="6" x="40" y="32" as="geometry" />
+        </mxCell>
+        <mxCell id="t-001" parent="1" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#087B81;fontStyle=1;resizable=1;" value="PROJECT LOTUS  /  ZEN PHARMACEUTICALS" vertex="1">
+          <mxGeometry height="24" width="1760" x="64" y="27" as="geometry" />
+        </mxCell>
+        <mxCell id="t-002" parent="1" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=36;fontColor=#18283F;fontStyle=1;resizable=1;" value="Application architecture" vertex="1">
+          <mxGeometry height="46" width="1750" x="64" y="57" as="geometry" />
+        </mxCell>
+        <mxCell id="t-003" parent="1" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=17;fontColor=#526277;fontStyle=0;resizable=1;" value="Three tiers • Fictitious company; demo data only • Request paths shown; responses return along the same route" vertex="1">
+          <mxGeometry height="26" width="1780" x="64" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="t-004" parent="1" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#526277;fontStyle=1;resizable=1;" value="TARGET DESIGN" vertex="1">
+          <mxGeometry height="26" width="370" x="1910" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="clients" parent="1" style="rounded=1;arcSize=36;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#F6F8FB;strokeColor=#CAD5E3;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="234" width="1840" x="40" y="156" as="geometry" />
+        </mxCell>
+        <mxCell id="t-006" parent="clients" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=17;fontColor=#526277;fontStyle=1;resizable=1;" value="USERS AND BROWSER  ·  INTERNET / UNTRUSTED" vertex="1">
+          <mxGeometry height="26" width="1760" x="24" y="18" as="geometry" />
+        </mxCell>
+        <mxCell id="staff" parent="clients" style="rounded=1;arcSize=28;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#CAD5E3;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="108" width="370" x="30" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="t-007" parent="staff" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=21;fontColor=#18283F;fontStyle=1;resizable=1;" value="Pharma staff" vertex="1">
+          <mxGeometry height="30" width="330" x="20" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="t-008" parent="staff" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=15;fontColor=#526277;fontStyle=0;resizable=1;" value="Drugs, stock and suppliers" vertex="1">
+          <mxGeometry height="22" width="330" x="20" y="51" as="geometry" />
+        </mxCell>
+        <mxCell id="t-009" parent="staff" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=15;fontColor=#526277;fontStyle=0;resizable=1;" value="Production and quality workflows" vertex="1">
+          <mxGeometry height="22" width="330" x="20" y="73" as="geometry" />
+        </mxCell>
+        <mxCell id="browser" parent="clients" style="rounded=1;arcSize=28;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#245BAA;strokeWidth=2;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="132" width="700" x="600" y="74" as="geometry" />
+        </mxCell>
+        <mxCell id="t-010" parent="browser" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=23;fontColor=#18283F;fontStyle=1;resizable=1;" value="Browser: pharma-ui" vertex="1">
+          <mxGeometry height="32" width="660" x="20" y="14" as="geometry" />
+        </mxCell>
+        <mxCell id="t-011" parent="browser" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=17;fontColor=#526277;fontStyle=0;resizable=1;" value="React executes here, outside AWS" vertex="1">
+          <mxGeometry height="25" width="660" x="20" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="t-012" parent="browser" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#526277;fontStyle=0;resizable=1;" value="Loads the UI assets, then calls /api/*" vertex="1">
+          <mxGeometry height="24" width="660" x="20" y="87" as="geometry" />
+        </mxCell>
+        <mxCell id="administrator" parent="clients" style="rounded=1;arcSize=28;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#CAD5E3;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="108" width="310" x="1500" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="t-013" parent="administrator" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=21;fontColor=#18283F;fontStyle=1;resizable=1;" value="Administrator" vertex="1">
+          <mxGeometry height="30" width="270" x="20" y="16" as="geometry" />
+        </mxCell>
+        <mxCell id="t-014" parent="administrator" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#526277;fontStyle=0;resizable=1;" value="User accounts and roles" vertex="1">
+          <mxGeometry height="24" width="270" x="20" y="58" as="geometry" />
+        </mxCell>
+        <mxCell id="account" parent="1" style="rounded=1;arcSize=36;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FCFDFE;strokeColor=#CAD5E3;strokeWidth=2;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="1350" width="1840" x="40" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="t-015" parent="account" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=18;fontColor=#526277;fontStyle=1;resizable=1;" value="AWS ACCOUNT / VPC  ·  PUBLIC AND PRIVATE ZONES" vertex="1">
+          <mxGeometry height="28" width="900" x="24" y="19" as="geometry" />
+        </mxCell>
+        <mxCell id="public-ingress" parent="account" style="rounded=1;arcSize=28;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#F2F7FF;strokeColor=#BBD1F0;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="170" width="1780" x="30" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="t-016" parent="public-ingress" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=18;fontColor=#245BAA;fontStyle=1;resizable=1;" value="1 · Presentation tier: public entry point" vertex="1">
+          <mxGeometry height="28" width="1250" x="20" y="12" as="geometry" />
+        </mxCell>
+        <mxCell id="public-planned" parent="public-ingress" style="rounded=1;arcSize=16;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFF5DD;strokeColor=#FFF5DD;strokeWidth=1;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="28" width="130" x="1620" y="13" as="geometry" />
+        </mxCell>
+        <mxCell id="t-017" parent="public-planned" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=13;fontColor=#95610B;fontStyle=1;resizable=1;" value="PLANNED" vertex="1">
+          <mxGeometry height="24" width="116" x="7" y="2" as="geometry" />
+        </mxCell>
+        <mxCell id="entry" parent="public-ingress" style="rounded=1;arcSize=24;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#245BAA;strokeWidth=2;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="92" width="660" x="590" y="46" as="geometry" />
+        </mxCell>
+        <mxCell id="t-018" parent="entry" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=23;fontColor=#18283F;fontStyle=1;resizable=1;" value="HTTPS load balancer" vertex="1">
+          <mxGeometry height="30" width="620" x="20" y="11" as="geometry" />
+        </mxCell>
+        <mxCell id="t-019" parent="entry" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=17;fontColor=#526277;fontStyle=0;resizable=1;" value="Default web routes → frontend; /api/* → gateway" vertex="1">
+          <mxGeometry height="24" width="620" x="20" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="eks" parent="account" style="rounded=1;arcSize=28;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#EFF9F8;strokeColor=#A9D8D5;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="650" width="1780" x="30" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="t-020" parent="eks" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=18;fontColor=#087B81;fontStyle=1;resizable=1;" value="PRIVATE EKS WORKLOADS  ·  PRESENTATION HOSTING + APPLICATION TIER" vertex="1">
+          <mxGeometry height="28" width="1510" x="20" y="17" as="geometry" />
+        </mxCell>
+        <mxCell id="eks-planned" parent="eks" style="rounded=1;arcSize=16;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFF5DD;strokeColor=#FFF5DD;strokeWidth=1;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="28" width="130" x="1620" y="17" as="geometry" />
+        </mxCell>
+        <mxCell id="t-021" parent="eks-planned" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=13;fontColor=#95610B;fontStyle=1;resizable=1;" value="PLANNED" vertex="1">
+          <mxGeometry height="24" width="116" x="7" y="2" as="geometry" />
+        </mxCell>
+        <mxCell id="frontend" parent="eks" style="rounded=1;arcSize=24;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#CAD5E3;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="110" width="520" x="40" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="t-022" parent="frontend" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=23;fontColor=#18283F;fontStyle=1;resizable=1;" value="Frontend server" vertex="1">
+          <mxGeometry height="30" width="480" x="20" y="13" as="geometry" />
+        </mxCell>
+        <mxCell id="t-023" parent="frontend" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=17;fontColor=#526277;fontStyle=0;resizable=1;" value="Serves pharma-ui static assets" vertex="1">
+          <mxGeometry height="24" width="480" x="20" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="t-024" parent="frontend" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=14;fontColor=#526277;fontStyle=0;resizable=1;" value="Presentation tier · private target" vertex="1">
+          <mxGeometry height="20" width="480" x="20" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway" parent="eks" style="rounded=1;arcSize=24;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#087B81;strokeWidth=2;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="110" width="880" x="760" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="t-025" parent="gateway" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=23;fontColor=#18283F;fontStyle=1;resizable=1;" value="Application API gateway" vertex="1">
+          <mxGeometry height="30" width="840" x="20" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="t-026" parent="gateway" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=17;fontColor=#526277;fontStyle=0;resizable=1;" value="Protected /api/* routes: validate user access tokens" vertex="1">
+          <mxGeometry height="24" width="840" x="20" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t-027" parent="gateway" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#526277;fontStyle=0;resizable=1;" value="Explicit public login route → Auth → access token response" vertex="1">
+          <mxGeometry height="22" width="840" x="20" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="services" parent="eks" style="rounded=1;arcSize=24;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FBFDFC;strokeColor=#B8D9D5;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="340" width="1700" x="40" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="t-028" parent="services" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=19;fontColor=#087B81;fontStyle=1;resizable=1;" value="2 · Application tier: seven domain services" vertex="1">
+          <mxGeometry height="28" width="880" x="20" y="16" as="geometry" />
+        </mxCell>
+        <mxCell id="t-029" parent="services" style="text;html=0;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=15;fontColor=#526277;fontStyle=0;resizable=1;" value="Private routes · service-level authorization required" vertex="1">
+          <mxGeometry height="24" width="770" x="910" y="18" as="geometry" />
+        </mxCell>
+        <mxCell id="auth" parent="services" style="rounded=1;arcSize=24;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#CAD5E3;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="94" width="370" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="t-030" parent="auth" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=21;fontColor=#18283F;fontStyle=1;resizable=1;" value="Auth" vertex="1">
+          <mxGeometry height="26" width="338" x="16" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="t-031" parent="auth" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#526277;fontStyle=0;resizable=1;" value="Logins, users and access tokens" vertex="1">
+          <mxGeometry height="22" width="338" x="16" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="t-032" parent="auth" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=14;fontColor=#526277;fontStyle=0;resizable=1;" value="Planned DB user: svc_auth" vertex="1">
+          <mxGeometry height="18" width="346" x="12" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="drug-catalog" parent="services" style="rounded=1;arcSize=24;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#CAD5E3;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="94" width="370" x="450" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="t-033" parent="drug-catalog" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=21;fontColor=#18283F;fontStyle=1;resizable=1;" value="Drug catalog" vertex="1">
+          <mxGeometry height="26" width="338" x="16" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="t-034" parent="drug-catalog" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#526277;fontStyle=0;resizable=1;" value="Drugs and categories" vertex="1">
+          <mxGeometry height="22" width="338" x="16" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="t-035" parent="drug-catalog" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=14;fontColor=#526277;fontStyle=0;resizable=1;" value="Planned DB user: svc_drug_catalog" vertex="1">
+          <mxGeometry height="18" width="346" x="12" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="inventory" parent="services" style="rounded=1;arcSize=24;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#CAD5E3;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="94" width="370" x="870" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="t-036" parent="inventory" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=21;fontColor=#18283F;fontStyle=1;resizable=1;" value="Inventory" vertex="1">
+          <mxGeometry height="26" width="338" x="16" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="t-037" parent="inventory" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#526277;fontStyle=0;resizable=1;" value="Stock and batches" vertex="1">
+          <mxGeometry height="22" width="338" x="16" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="t-038" parent="inventory" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=14;fontColor=#526277;fontStyle=0;resizable=1;" value="Planned DB user: svc_inventory" vertex="1">
+          <mxGeometry height="18" width="346" x="12" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="manufacturing" parent="services" style="rounded=1;arcSize=24;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#CAD5E3;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="94" width="370" x="1290" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="t-039" parent="manufacturing" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=21;fontColor=#18283F;fontStyle=1;resizable=1;" value="Manufacturing" vertex="1">
+          <mxGeometry height="26" width="338" x="16" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="t-040" parent="manufacturing" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#526277;fontStyle=0;resizable=1;" value="Production orders" vertex="1">
+          <mxGeometry height="22" width="338" x="16" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="t-041" parent="manufacturing" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=14;fontColor=#526277;fontStyle=0;resizable=1;" value="Planned DB user: svc_manufacturing" vertex="1">
+          <mxGeometry height="18" width="346" x="12" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="supplier" parent="services" style="rounded=1;arcSize=24;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#CAD5E3;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="94" width="370" x="30" y="195" as="geometry" />
+        </mxCell>
+        <mxCell id="t-042" parent="supplier" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=21;fontColor=#18283F;fontStyle=1;resizable=1;" value="Supplier" vertex="1">
+          <mxGeometry height="26" width="338" x="16" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="t-043" parent="supplier" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#526277;fontStyle=0;resizable=1;" value="Suppliers and purchase orders" vertex="1">
+          <mxGeometry height="22" width="338" x="16" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="t-044" parent="supplier" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=14;fontColor=#526277;fontStyle=0;resizable=1;" value="Planned DB user: svc_supplier" vertex="1">
+          <mxGeometry height="18" width="346" x="12" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="quality-control" parent="services" style="rounded=1;arcSize=24;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#CAD5E3;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="94" width="370" x="660" y="195" as="geometry" />
+        </mxCell>
+        <mxCell id="t-045" parent="quality-control" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=21;fontColor=#18283F;fontStyle=1;resizable=1;" value="Quality control" vertex="1">
+          <mxGeometry height="26" width="338" x="16" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="t-046" parent="quality-control" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#526277;fontStyle=0;resizable=1;" value="Batch testing and release" vertex="1">
+          <mxGeometry height="22" width="338" x="16" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="t-047" parent="quality-control" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=14;fontColor=#526277;fontStyle=0;resizable=1;" value="Planned DB user: svc_quality_control" vertex="1">
+          <mxGeometry height="18" width="346" x="12" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="notification" parent="services" style="rounded=1;arcSize=24;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#CAD5E3;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="94" width="370" x="1290" y="195" as="geometry" />
+        </mxCell>
+        <mxCell id="t-048" parent="notification" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=21;fontColor=#18283F;fontStyle=1;resizable=1;" value="Notification" vertex="1">
+          <mxGeometry height="26" width="338" x="16" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="t-049" parent="notification" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#526277;fontStyle=0;resizable=1;" value="Email alerts" vertex="1">
+          <mxGeometry height="22" width="338" x="16" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="t-050" parent="notification" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=14;fontColor=#245BAA;fontStyle=0;resizable=1;" value="No database: sends email only" vertex="1">
+          <mxGeometry height="18" width="346" x="12" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="t-051" parent="services" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=15;fontColor=#526277;fontStyle=0;resizable=1;" value="Planned: dedicated Kubernetes service account + EKS Pod Identity IAM role per service; each role has only its required permissions." vertex="1">
+          <mxGeometry height="24" width="1660" x="20" y="303" as="geometry" />
+        </mxCell>
+        <mxCell id="data" parent="account" style="rounded=1;arcSize=28;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#F6F3FC;strokeColor=#C8B9E9;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="330" width="1780" x="30" y="980" as="geometry" />
+        </mxCell>
+        <mxCell id="t-052" parent="data" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=22;fontColor=#6950AC;fontStyle=1;resizable=1;" value="3 · Data tier: Amazon RDS for PostgreSQL" vertex="1">
+          <mxGeometry height="30" width="1290" x="20" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="rds-verified" parent="data" style="rounded=1;arcSize=16;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#EAF6ED;strokeColor=#EAF6ED;strokeWidth=1;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="28" width="280" x="1470" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="t-053" parent="rds-verified" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=13;fontColor=#246A46;fontStyle=1;resizable=1;" value="INFRASTRUCTURE VERIFIED*" vertex="1">
+          <mxGeometry height="24" width="266" x="7" y="2" as="geometry" />
+        </mxCell>
+        <mxCell id="t-054" parent="data" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=17;fontColor=#95610B;fontStyle=1;resizable=1;" value="Service schemas, database users and access grants · PLANNED" vertex="1">
+          <mxGeometry height="24" width="1660" x="40" y="58" as="geometry" />
+        </mxCell>
+        <mxCell id="schema-auth" parent="data" style="rounded=1;arcSize=20;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#CABCEB;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="86" width="260" x="40" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="t-055" parent="schema-auth" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=17;fontColor=#18283F;fontStyle=1;resizable=1;" value="Schema: auth" vertex="1">
+          <mxGeometry height="24" width="236" x="12" y="13" as="geometry" />
+        </mxCell>
+        <mxCell id="t-056" parent="schema-auth" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=14;fontColor=#526277;fontStyle=0;resizable=1;" value="DB user: svc_auth" vertex="1">
+          <mxGeometry height="22" width="240" x="10" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="schema-drug_catalog" parent="data" style="rounded=1;arcSize=20;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#CABCEB;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="86" width="260" x="320" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="t-057" parent="schema-drug_catalog" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=17;fontColor=#18283F;fontStyle=1;resizable=1;" value="Schema: drug_catalog" vertex="1">
+          <mxGeometry height="24" width="236" x="12" y="13" as="geometry" />
+        </mxCell>
+        <mxCell id="t-058" parent="schema-drug_catalog" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=14;fontColor=#526277;fontStyle=0;resizable=1;" value="DB user: svc_drug_catalog" vertex="1">
+          <mxGeometry height="22" width="240" x="10" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="schema-inventory" parent="data" style="rounded=1;arcSize=20;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#CABCEB;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="86" width="260" x="600" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="t-059" parent="schema-inventory" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=17;fontColor=#18283F;fontStyle=1;resizable=1;" value="Schema: inventory" vertex="1">
+          <mxGeometry height="24" width="236" x="12" y="13" as="geometry" />
+        </mxCell>
+        <mxCell id="t-060" parent="schema-inventory" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=14;fontColor=#526277;fontStyle=0;resizable=1;" value="DB user: svc_inventory" vertex="1">
+          <mxGeometry height="22" width="240" x="10" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="schema-manufacturing" parent="data" style="rounded=1;arcSize=20;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#CABCEB;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="86" width="260" x="880" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="t-061" parent="schema-manufacturing" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=17;fontColor=#18283F;fontStyle=1;resizable=1;" value="Schema: manufacturing" vertex="1">
+          <mxGeometry height="24" width="236" x="12" y="13" as="geometry" />
+        </mxCell>
+        <mxCell id="t-062" parent="schema-manufacturing" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=14;fontColor=#526277;fontStyle=0;resizable=1;" value="DB user: svc_manufacturing" vertex="1">
+          <mxGeometry height="22" width="240" x="10" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="schema-supplier" parent="data" style="rounded=1;arcSize=20;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#CABCEB;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="86" width="260" x="1160" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="t-063" parent="schema-supplier" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=17;fontColor=#18283F;fontStyle=1;resizable=1;" value="Schema: supplier" vertex="1">
+          <mxGeometry height="24" width="236" x="12" y="13" as="geometry" />
+        </mxCell>
+        <mxCell id="t-064" parent="schema-supplier" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=14;fontColor=#526277;fontStyle=0;resizable=1;" value="DB user: svc_supplier" vertex="1">
+          <mxGeometry height="22" width="240" x="10" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="schema-quality_control" parent="data" style="rounded=1;arcSize=20;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#CABCEB;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="86" width="260" x="1440" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="t-065" parent="schema-quality_control" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=17;fontColor=#18283F;fontStyle=1;resizable=1;" value="Schema: quality_control" vertex="1">
+          <mxGeometry height="24" width="236" x="12" y="13" as="geometry" />
+        </mxCell>
+        <mxCell id="t-066" parent="schema-quality_control" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=14;fontColor=#526277;fontStyle=0;resizable=1;" value="DB user: svc_quality_control" vertex="1">
+          <mxGeometry height="22" width="240" x="10" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t-067" parent="data" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#526277;fontStyle=0;resizable=1;" value="Infrastructure: private subnets · TLS required · customer-managed KMS encryption" vertex="1">
+          <mxGeometry height="30" width="1660" x="40" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="t-068" parent="data" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#526277;fontStyle=0;resizable=1;" value="Master account: AWS-managed password in Secrets Manager · service accounts: short-lived IAM login tokens (planned)" vertex="1">
+          <mxGeometry height="30" width="1660" x="40" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="t-069" parent="data" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#526277;fontStyle=0;resizable=1;" value="SQL grants enforce schema access; runtime users must not receive cross-service table privileges." vertex="1">
+          <mxGeometry height="30" width="1660" x="40" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="t-070" parent="data" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=13;fontColor=#526277;fontStyle=0;resizable=1;" value="*Verified in ZPP-36: evidence in the post-merge verification comment on zen-infra PR #19." vertex="1">
+          <mxGeometry height="20" width="1660" x="40" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="outside" parent="1" style="rounded=1;arcSize=28;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFAEE;strokeColor=#E4CD98;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="280" width="370" x="1910" y="1030" as="geometry" />
+        </mxCell>
+        <mxCell id="t-085" parent="outside" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=17;fontColor=#95610B;fontStyle=1;resizable=1;" value="OUTSIDE SERVICES" vertex="1">
+          <mxGeometry height="26" width="330" x="20" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="email-provider" parent="outside" style="rounded=1;arcSize=24;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#E4CD98;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="120" width="330" x="20" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="t-086" parent="email-provider" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=22;fontColor=#18283F;fontStyle=1;resizable=1;" value="Email provider" vertex="1">
+          <mxGeometry height="28" width="298" x="16" y="17" as="geometry" />
+        </mxCell>
+        <mxCell id="t-087" parent="email-provider" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=17;fontColor=#526277;fontStyle=0;resizable=1;" value="Notification delivery" vertex="1">
+          <mxGeometry height="24" width="298" x="16" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="t-088" parent="email-provider" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=14;fontColor=#245BAA;fontStyle=0;resizable=1;" value="Provider / authentication: to confirm" vertex="1">
+          <mxGeometry height="20" width="298" x="16" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="t-089" parent="outside" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=14;fontColor=#526277;fontStyle=0;resizable=1;" value="TLS + provider credentials (planned)" vertex="1">
+          <mxGeometry height="23" width="330" x="20" y="212" as="geometry" />
+        </mxCell>
+        <mxCell id="t-090" parent="outside" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=14;fontColor=#526277;fontStyle=0;resizable=1;" value="Addresses, content and delivery metadata" vertex="1">
+          <mxGeometry height="23" width="330" x="20" y="235" as="geometry" />
+        </mxCell>
+        <mxCell id="trust-legend" parent="1" style="rounded=1;arcSize=28;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#F6F8FB;strokeColor=#CAD5E3;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="210" width="1160" x="40" y="1810" as="geometry" />
+        </mxCell>
+        <mxCell id="t-091" parent="trust-legend" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=21;fontColor=#18283F;fontStyle=1;resizable=1;" value="Trust boundaries: planned controls" vertex="1">
+          <mxGeometry height="30" width="1120" x="20" y="18" as="geometry" />
+        </mxCell>
+        <mxCell id="t-092" parent="trust-legend" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#526277;fontStyle=0;resizable=1;" value="TB1  Internet → public entry: HTTPS 443; the browser remains untrusted." vertex="1">
+          <mxGeometry height="26" width="1120" x="20" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t-093" parent="trust-legend" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#526277;fontStyle=0;resizable=1;" value="TB2  Ingress → private EKS targets: only intended frontend and gateway routes." vertex="1">
+          <mxGeometry height="26" width="1120" x="20" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="t-094" parent="trust-legend" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#526277;fontStyle=0;resizable=1;" value="TB3  Gateway → services: validate identity; enforce role, action and record access." vertex="1">
+          <mxGeometry height="26" width="1120" x="20" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="t-095" parent="trust-legend" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#526277;fontStyle=0;resizable=1;" value="TB4  Service → RDS: TLS + IAM database authentication + service-specific SQL grants." vertex="1">
+          <mxGeometry height="26" width="1120" x="20" y="138" as="geometry" />
+        </mxCell>
+        <mxCell id="t-096" parent="trust-legend" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#526277;fontStyle=0;resizable=1;" value="TB5  Notification → provider: authenticated TLS; restrict outbound data." vertex="1">
+          <mxGeometry height="26" width="1120" x="20" y="164" as="geometry" />
+        </mxCell>
+        <mxCell id="more-detail" parent="1" style="rounded=1;arcSize=28;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFF9DB;strokeColor=#E9D58A;strokeWidth=1.5;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="210" width="660" x="1220" y="1810" as="geometry" />
+        </mxCell>
+        <mxCell id="md-1" parent="more-detail" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=21;fontColor=#18283F;fontStyle=1;resizable=1;" value="More detail" vertex="1">
+          <mxGeometry height="30" width="620" x="20" y="18" as="geometry" />
+        </mxCell>
+        <mxCell id="md-2" parent="more-detail" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#526277;fontStyle=0;resizable=1;" value="How it is protected: Security architecture (identities, keys, network, each control with its proof)" vertex="1">
+          <mxGeometry height="52" width="620" x="20" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="md-3" parent="more-detail" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#526277;fontStyle=0;resizable=1;" value="How changes ship: Delivery flow (pull request, checks, approval, deploy)" vertex="1">
+          <mxGeometry height="52" width="620" x="20" y="118" as="geometry" />
+        </mxCell>
+        <mxCell id="staff-browser" edge="1" parent="1" source="staff" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5151515151515151;entryDx=0;entryDy=0;strokeColor=#687A91;strokeWidth=2;endArrow=block;endFill=1;" target="browser" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="admin-browser" edge="1" parent="1" source="administrator" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5151515151515151;entryDx=0;entryDy=0;strokeColor=#687A91;strokeWidth=2;endArrow=block;endFill=1;" target="browser" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="browser-entry" edge="1" parent="1" source="browser" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#245BAA;strokeWidth=2;endArrow=block;endFill=1;" target="entry" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="entry-frontend" edge="1" parent="1" source="entry" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;exitX=0.21212121212121213;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#687A91;strokeWidth=2;endArrow=block;endFill=1;" target="frontend" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="760" />
+              <mxPoint x="370" y="760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="entry-gateway" edge="1" parent="1" source="entry" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;exitX=0.8333333333333334;exitY=1;exitDx=0;exitDy=0;entryX=0.4318181818181818;entryY=0;entryDx=0;entryDy=0;strokeColor=#687A91;strokeWidth=2;endArrow=block;endFill=1;" target="gateway" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway-services" edge="1" parent="1" source="gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.6823529411764706;entryY=0;entryDx=0;entryDy=0;strokeColor=#687A91;strokeWidth=2;endArrow=block;endFill=1;" target="services" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="services-data" edge="1" parent="1" source="services" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;exitX=0.5176470588235295;exitY=1;exitDx=0;exitDy=0;entryX=0.5168539325842697;entryY=0;entryDx=0;entryDy=0;strokeColor=#6950AC;strokeWidth=2;endArrow=block;endFill=1;" target="data" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="notification-email" edge="1" parent="1" source="notification" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.7666666666666667;entryDx=0;entryDy=0;strokeColor=#687A91;strokeWidth=2;endArrow=block;endFill=1;" target="email-provider" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tb1" parent="1" style="rounded=1;arcSize=16;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#245BAA;strokeWidth=1;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="28" width="90" x="945" y="404" as="geometry" />
+        </mxCell>
+        <mxCell id="t-103" parent="tb1" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=13;fontColor=#245BAA;fontStyle=1;resizable=1;" value="TB1" vertex="1">
+          <mxGeometry height="24" width="76" x="7" y="2" as="geometry" />
+        </mxCell>
+        <mxCell id="t-104" parent="1" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#245BAA;fontStyle=1;resizable=1;" value="HTTPS 443 · web assets and /api/*" vertex="1">
+          <mxGeometry height="26" width="800" x="1040" y="405" as="geometry" />
+        </mxCell>
+        <mxCell id="frontend-path" parent="1" style="rounded=1;arcSize=16;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#245BAA;strokeWidth=1;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="28" width="140" x="730" y="684" as="geometry" />
+        </mxCell>
+        <mxCell id="t-105" parent="frontend-path" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=13;fontColor=#245BAA;fontStyle=1;resizable=1;" value="TB2 · web" vertex="1">
+          <mxGeometry height="24" width="126" x="7" y="2" as="geometry" />
+        </mxCell>
+        <mxCell id="tb2" parent="1" style="rounded=1;arcSize=16;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#245BAA;strokeWidth=1;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="28" width="180" x="1120" y="684" as="geometry" />
+        </mxCell>
+        <mxCell id="t-106" parent="tb2" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=13;fontColor=#245BAA;fontStyle=1;resizable=1;" value="TB2 · /api/*" vertex="1">
+          <mxGeometry height="24" width="166" x="7" y="2" as="geometry" />
+        </mxCell>
+        <mxCell id="tb3" parent="1" style="rounded=1;arcSize=16;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#245BAA;strokeWidth=1;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="28" width="90" x="1225" y="902" as="geometry" />
+        </mxCell>
+        <mxCell id="t-107" parent="tb3" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=13;fontColor=#245BAA;fontStyle=1;resizable=1;" value="TB3" vertex="1">
+          <mxGeometry height="24" width="76" x="7" y="2" as="geometry" />
+        </mxCell>
+        <mxCell id="t-108" parent="1" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=14;fontColor=#526277;fontStyle=0;resizable=1;" value="Route to the selected service; enforce" vertex="1">
+          <mxGeometry height="21" width="440" x="1330" y="897" as="geometry" />
+        </mxCell>
+        <mxCell id="t-109" parent="1" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=14;fontColor=#526277;fontStyle=0;resizable=1;" value="user role, action and record access." vertex="1">
+          <mxGeometry height="21" width="440" x="1330" y="918" as="geometry" />
+        </mxCell>
+        <mxCell id="tb4" parent="1" style="rounded=1;arcSize=16;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#245BAA;strokeWidth=1;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="28" width="90" x="945" y="1370" as="geometry" />
+        </mxCell>
+        <mxCell id="t-110" parent="tb4" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=13;fontColor=#245BAA;fontStyle=1;resizable=1;" value="TB4" vertex="1">
+          <mxGeometry height="24" width="76" x="7" y="2" as="geometry" />
+        </mxCell>
+        <mxCell id="t-111" parent="1" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=15;fontColor=#6950AC;fontStyle=1;resizable=1;" value="TLS 5432 · IAM DB token · service-specific SQL grants (planned)" vertex="1">
+          <mxGeometry height="26" width="775" x="1055" y="1371" as="geometry" />
+        </mxCell>
+        <mxCell id="tb5" parent="1" style="rounded=1;arcSize=16;absoluteArcSize=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#245BAA;strokeWidth=1;shadow=0;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="28" width="100" x="1805" y="1178" as="geometry" />
+        </mxCell>
+        <mxCell id="t-112" parent="tb5" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=Arial;fontSize=13;fontColor=#245BAA;fontStyle=1;resizable=1;" value="TB5" vertex="1">
+          <mxGeometry height="24" width="86" x="7" y="2" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

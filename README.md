@@ -14,46 +14,17 @@ Zen Pharmaceuticals is a fictional company. Project Lotus rebuilds its platform 
 
 ---
 
-## Target architecture
+## Architecture
 
-Solid boxes are built and verified; boxes marked *(in progress)* or *(planned)* are not yet.
+![Project Lotus application architecture: users and browser, a public HTTPS load balancer, the frontend and API gateway on private EKS, seven domain services, and Amazon RDS for PostgreSQL](docs/architecture/application-architecture.png)
 
-```mermaid
-flowchart LR
-    dev([Engineer]) -->|pull request| gh[GitHub]
+Three tiers: the web app (pharma-ui) runs in the browser; the API gateway and seven domain services run on private EKS; PostgreSQL runs on Amazon RDS, with its own schema and database user for each service that stores data. The data tier's infrastructure is built and verified; tiers marked *planned* are not deployed yet.
 
-    subgraph ci[GitHub Actions]
-        plan[Terraform plan<br/>read-only role]
-        apply[Terraform apply<br/>after approval]
-        build[App CI: build, scan, sign, push<br/><i>planned</i>]
-    end
+More detail:
 
-    gh --> plan
-    gh -->|merge + approval| apply
-    gh -.-> build
-
-    subgraph aws[AWS us-east-1]
-        oidc{{GitHub OIDC<br/>no stored keys}}
-        ecr[(ECR<br/>immutable, KMS)]
-        subgraph vpc[VPC: public / private / database tiers]
-            eks[EKS<br/>private nodes]
-            rds[(RDS PostgreSQL<br/>private, TLS, KMS)]
-        end
-        state[(Terraform state<br/>S3 + KMS)]
-    end
-
-    plan -.-> oidc
-    apply -.-> oidc
-    build -.-> oidc
-    apply --> state
-    apply --> eks
-    apply --> rds
-    build -.-> ecr
-    build -.->|update image digest| gitops
-    gitops[zen-gitops + Argo CD<br/><i>planned</i>] -.-> eks
-    ecr --> eks
-    eks -->|TLS only| rds
-```
+- [Security architecture](docs/architecture/security-architecture.png): identities, keys, network tiers and trust boundaries, with each verified control
+- [Delivery flow](docs/architecture/delivery-flow.png): how a change reaches AWS (pull request, checks, approval, apply)
+- Editable sources: [`docs/architecture/`](docs/architecture/) (draw.io)
 
 ## Repositories
 
