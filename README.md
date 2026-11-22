@@ -8,9 +8,9 @@
 
 **Building a pharmaceutical platform on AWS with Terraform, EKS, and GitHub Actions, using OIDC authentication, approval gates, and documented security testing.**
 
-Zen Pharmaceuticals is a fictional company. Project Lotus rebuilds its platform (eight backend services and a web UI) using documented DevSecOps practices: Scrum in Jira, architecture decision records, reviewed pull requests, and evidence attached to every ticket.
+Zen Pharmaceuticals is a fictional company. Project Lotus builds its platform (eight backend services and a web UI) using documented DevSecOps practices: Scrum in Jira, architecture decision records, reviewed pull requests, and evidence attached to every ticket.
 
-> **Status (November 2026):** Sprint 3. Built and verified: Terraform state, CI identity, the approval-gated pipeline, the shared container registry, the EKS cluster and RDS PostgreSQL. In progress: pod identity. Planned: application CI, GitOps and policy as code. The application repositories stay private until go-live.
+> **Status (November 2026):** Sprint 4. Built and verified: Terraform state, CI identity, the approval-gated pipeline, the shared container registry, the EKS cluster and RDS PostgreSQL. In progress: pod identity, and the first services (inventory, notification and the web UI) as hardened container images. Planned: application CI, GitOps and policy as code. The application repositories stay private until go-live.
 
 ---
 
@@ -72,6 +72,7 @@ Known limits are recorded, not hidden: development uses one AWS account and one 
 | [003](https://github.com/abdurahim50/zen-infra/blob/main/docs/adr/0003-shared-container-registry.md) | One shared container registry, build once and promote by digest |
 | [004](https://github.com/abdurahim50/zen-infra/blob/main/docs/adr/0004-eks-design.md) | EKS design for dev |
 | [005](https://github.com/abdurahim50/zen-infra/blob/main/docs/adr/0005-rds-design.md) | RDS PostgreSQL design for dev: RDS-managed password, IAM database authentication, TLS required |
+| [006](https://github.com/abdurahim50/zen-infra/blob/main/docs/adr/0006-container-image-standard.md) | Container image standard: minimal pinned base images, non-root, read-only, scanned with dated exceptions, SBOM per image |
 
 ## Roadmap
 
