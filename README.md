@@ -10,7 +10,7 @@
 
 Zen Pharmaceuticals is a fictional company. Project Lotus builds its platform (eight backend services and a web UI) using documented DevSecOps practices: Scrum in Jira, architecture decision records, reviewed pull requests, and evidence attached to every ticket.
 
-> **Status (November 2026):** Sprint 4. Built and verified: Terraform state, CI identity, the approval-gated pipeline, the shared container registry, the EKS cluster and RDS PostgreSQL. In progress: pod identity, and the first services (inventory, notification and the web UI) as hardened container images. Planned: application CI, GitOps and policy as code. The application repositories stay private until go-live.
+> **Status (November 2026):** Sprint 4. Built and verified: Terraform state, CI identity, the approval-gated pipeline, the shared container registry, the EKS cluster and RDS PostgreSQL. The first services (inventory, notification and the web UI) are built as hardened, scanned container images and run together locally with a smoke test. In progress: pod identity and IAM database login on EKS. Planned: the remaining services, application CI, GitOps and policy as code. The application repositories stay private until go-live.
 
 ---
 
@@ -32,8 +32,8 @@ More detail:
 |---|---|---|---|
 | [zen-infra](https://github.com/abdurahim50/zen-infra) | Terraform: state, CI identity, network, registry, EKS, RDS; the approval-gated pipeline | Foundation, EKS and RDS verified | Public |
 | zen-gitops | Kubernetes manifests and policies, deployed by Argo CD | Planned | Private until go-live |
-| zen-pharma-backend | Eight services; CI to build, scan, sign and push images | Image push identity verified; CI planned | Private until go-live |
-| zen-pharma-frontend | Web UI; same CI pattern | Image push identity configured; CI planned | Private until go-live |
+| zen-pharma-backend | Eight services; CI to build, scan, sign and push images | Inventory and notification built as hardened images, with a local compose stack; image push identity verified; CI planned | Private until go-live |
+| zen-pharma-frontend | Web UI; same CI pattern | Web UI first page built as an unprivileged nginx image; image push identity configured; CI planned | Private until go-live |
 
 ## Security controls, with proof
 
@@ -51,6 +51,8 @@ Each claim says exactly what was tested; the link goes to the published result.
 | No database password in Terraform | RDS generates and stores the master password in Secrets Manager; the whole state was searched and holds no password value | [PR #19 verification](https://github.com/abdurahim50/zen-infra/pull/19#issuecomment-6728771114) |
 | Database private and TLS only | Reachable only from the EKS cluster security group on 5432; a TLS connection from a pod worked, a non-TLS one was refused, and the endpoint was unreachable from outside the VPC | [PR #19 verification](https://github.com/abdurahim50/zen-infra/pull/19#issuecomment-6728771114) |
 | Data encrypted at rest with customer managed keys | KMS keys with rotation for Terraform state, images, Kubernetes secrets and the database; cluster settings checked after deploy | [PR #17 verification](https://github.com/abdurahim50/zen-infra/pull/17#issuecomment-6723056131), [PR #19 verification](https://github.com/abdurahim50/zen-infra/pull/19#issuecomment-6728771114), [ADR-003](https://github.com/abdurahim50/zen-infra/blob/main/docs/adr/0003-shared-container-registry.md) |
+
+Application-level controls (input validation, output escaping, security headers, image hardening and local network isolation) are tested in the private application repositories; they will be listed here with links when those repositories go public.
 
 Known limits are recorded, not hidden: development uses one AWS account and one engineer approves their own deployments (see the accepted-risks table in [ADR-002](https://github.com/abdurahim50/zen-infra/blob/main/docs/adr/0002-github-oidc.md)). Controls are mapped to NIST SP 800-53, with the DoD CIO Cloud Security Playbook as a gap check; a full control matrix is on the roadmap.
 
@@ -76,7 +78,7 @@ Known limits are recorded, not hidden: development uses one AWS account and one 
 
 ## Roadmap
 
-- **Now:** EKS Pod Identity for application pods, and IAM database login instead of passwords.
+- **Now:** EKS Pod Identity for application pods, and IAM database login instead of passwords; then the remaining services on the same image standard.
 - **Next:** application CI with SAST, dependency and container scanning, signed images with SBOMs; GitOps with Argo CD; policy as code so only signed images run.
 - **Then:** default-deny network policies, DAST, a decision on service-to-service mTLS, and automated security evidence for the control matrix.
 
